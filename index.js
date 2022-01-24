@@ -12,6 +12,19 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  // use the .map method on the tutorials to return a new array
-  return tutorials
+  return tutorials.map(title => {
+    const words = title.split(' ');
+    const capitalizedWords =
+      words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    const newTitle = capitalizedWords.join(' ');
+    return newTitle;
+  });
 }
+
+function titleCase(str) {
+  return str.toLowerCase().split(' ').map(function(word) {
+    return word.replace(word[0], word[0].toUpperCase());
+  }).join(' ');
+}
+
+// https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/
